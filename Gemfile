@@ -16,6 +16,8 @@ gem 'puma', '~> 4.1'
 
 gem 'jbuilder'
 
+gem 'webpacker'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 

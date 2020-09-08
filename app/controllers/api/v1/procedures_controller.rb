@@ -3,8 +3,8 @@ class Api::V1::ProceduresController < ApplicationController
     @procedures = Procedure.all
     if params[:q].present?
       @procedures = @procedures
-        .where("POSITION(LOWER('#{params[:q]}') IN LOWER(title)) > 0")
-        .order("POSITION(LOWER('#{params[:q]}') IN LOWER(title))")
+      .where("LOWER(title) LIKE LOWER('%#{params[:q]}%')")
+      .sort_by { |procedure| procedure.title.downcase.index(params[:q].downcase) }
     end
   end
 end

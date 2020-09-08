@@ -12,3 +12,5 @@ append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'public/syst
 set :keep_releases, 3
 
 set :ssh_options, forward_agent: true
+
+Rake::Task['deploy:assets:backup_manifest'].clear_actions

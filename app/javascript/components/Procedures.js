@@ -7,7 +7,7 @@ export default function Procedures () {
   const [input, setInput] = useState('')
 
   const _fetch = async () => {
-    const { data } = await axios.get('http://localhost:3000/api/v1/procedures.json', { params: { q: input }})
+    const { data } = await axios.get('/api/v1/procedures.json', { params: { q: input }})
 
     setProcedures(data.procedures)
   }
